@@ -1,14 +1,14 @@
 const INITIAL_STATE = {
-    text: { textInputValue: '' }
+    image: { imageData: null }
 };
 
 const postReducer = (state = INITIAL_STATE, action) => {
     console.log('textInputReducer', action);
     switch(action.type){
         case 'POST_CREATE_SUCCESS':
-            return {...state, textInputValue: action.payload };
+            return {...state, imageData: null };
         case 'POST_CREATE_FAILURE':
-            return {...state, textInputValue: ''}
+            return {...state, imageData: imageData }
     default:
         return state;
     }

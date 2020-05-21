@@ -1,13 +1,14 @@
 export const createPost = (title, description, imageData) => {
   return (dispatch, getState) => {
-    const currentUser = getState().currentUser
+    // const currentUser = getState().currentUser
 
+    //need a uri to push the image
     return fetch(`${URL}posts`, {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
-        'X-User-Email': currentUser.email,
-        'X-User-Token': currentUser.authentication_token,
+        // 'X-User-Email': currentUser.email,
+        // 'X-User-Token': currentUser.authentication_token,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({

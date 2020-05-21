@@ -24,12 +24,13 @@ import ImagePicker from 'react-native-image-picker';
 import { Provider } from 'react-redux';
 import Store from './app/store/Index'
 
+import Card from './postCard'
+
 
 class Form extends React.Component {
   state = {
-    imageData: null
+      imageData: null
   }
-
 
   getPhotoFromGallery = () => {
     ImagePicker.launchImageLibrary({}, (response)  => {
@@ -91,6 +92,9 @@ class Form extends React.Component {
               <Text> Submit </Text>
               </Button>
             </View>
+            {this.state.imageData && (
+              <Card/>
+            )}
         </Provider>
     );
   }
