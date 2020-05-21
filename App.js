@@ -21,16 +21,19 @@ import {
 import { Container, Button } from 'native-base';
 import ImagePicker from 'react-native-image-picker';
 
+import { connect } from 'react-redux'
 import { Provider } from 'react-redux';
 import Store from './app/store/Index'
+
+import { createPost } from './app/actions/PostActions';
 
 import Card from './postCard'
 
 
 class Form extends React.Component {
-  state = {
-      imageData: null
-  }
+    state = {
+        imageData: null
+    }
 
   getPhotoFromGallery = () => {
     ImagePicker.launchImageLibrary({}, (response)  => {
@@ -50,9 +53,8 @@ class Form extends React.Component {
 
   onSubmit = () => {
     const { imageData } = this.state
-    const { onSubmit } = this.props
 
-    onSubmit({ imageData })
+    this.props.createPost({ imageData })
   }
 
   showPickedImage() {
@@ -80,7 +82,7 @@ class Form extends React.Component {
   }
 
   render() {
-    const { image, onSubmit } = this.props;
+    const { image, onSubmit } = this.state;
 
     return (
         <Provider store={Store}>

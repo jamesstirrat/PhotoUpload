@@ -1,9 +1,10 @@
-export const createPost = (title, description, imageData) => {
+export const createPost = (imageData) => {
+// export const createPost = (title, description, imageData) => {
   return (dispatch, getState) => {
     // const currentUser = getState().currentUser
 
     //need a uri to push the image
-    return fetch(`${URL}posts`, {
+    return 'http://localhost:3000/api/v1/posts', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -13,12 +14,11 @@ export const createPost = (title, description, imageData) => {
       },
       body: JSON.stringify({
         post: {
-          title,
-          description,
+          // title,
+          // description,
           image: imageData.data,
           file_name: imageData.fileName,
         }
-      })
     }).then((response) => {
       if (response.ok) {
         response.json().then((data) => {
@@ -39,3 +39,4 @@ export const createPost = (title, description, imageData) => {
     })
   };
 };
+}
