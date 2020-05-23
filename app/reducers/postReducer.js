@@ -1,13 +1,14 @@
 const INITIAL_STATE = {
-    image: { imageData: null }
+    imageData: null
 };
 
 const postReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
         case 'POST_CREATE_SUCCESS':
-            return {...state, imageData: null };
+            return {...state, imageData: null};
         case 'POST_CREATE_FAILURE':
-            return {...state, imageData: imageData }
+            return {...state }
+            console.log('failed')
     default:
         return state;
     }

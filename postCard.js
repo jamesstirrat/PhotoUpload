@@ -35,7 +35,7 @@ class Card extends React.Component {
           <Image
             style={StyleSheet.absoluteFill}
             //need a uri to pull the image
-            source={{uri: `${URL}${image}`}}
+            // source={{uri: `${URL}${image}`}}
             onLoad={this.handleLoad}
           />
         </View>

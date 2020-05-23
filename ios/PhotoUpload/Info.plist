@@ -37,8 +37,12 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Take a photo for us</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Select an existing photo for us</string>
 	<key>Privacy – Camera Usage Description	</key>
 	<string>App needs Camera Access Permission for testing</string>
 	<key>Privacy – Photo Library Additions Usage Description</key>
